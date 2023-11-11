@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/navbar', {page: '/lego/sets'}) %>
+    <div class="container mx-auto hero bg-base-200 rounded-lg p-6">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Explore specific themes</h1>
+                <a class="btn" href="/lego/sets?theme=technic">Technic</a>
+                <a class="btn" href="/lego/sets?theme=supplemental">Supplemental</a>
+                <a class="btn" href="/lego/sets?theme=playhouse">Playhouse</a>
+            </div>
+        </div>
+    </div>
+    <% data.forEach(set=>{ %>
+        <tr>
+            <td><img class="avatar w-24 h-16 rounded" src=<%=set.img_url%>></td>
+            <td><%= set.name %></td>
+            <td><a href='/lego/sets?theme=<%=set.theme%>' class="btn-accent rounded"><%= set.theme %></a></td>
+            <td><%= set.year %></td>
+            <td><%= set.num_parts %></td>
+            <td><%= set.set_num %></td>
+            <td id="quotable"></td>
+            <script>
+            document.addEventListener("DOMContentLoaded", ()=>{
+            const quote = JSON.parse(fetch('https://quotable.io/random'));
+            console.log(quote);
+            document.getElementById('quotable').innerHTML = quote.content;
+            });
+          
+          </script>
+          <br>
+        </tr>
+      <% }) %>
+</body>
+</html>
