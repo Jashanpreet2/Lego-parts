@@ -18,7 +18,7 @@
 
 *
 
-* Published URL: ___________________________________________________________
+* Published URL: https://pear-brave-bee.cyclic.app
 
 *
 
