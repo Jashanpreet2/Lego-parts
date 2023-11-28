@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -11,18 +11,19 @@
     <div class="container mx-auto hero bg-base-200 rounded-lg p-6">
         <div class="hero">
             <div class="<hero-content>">
-                <h1><%=set.theme%></h1>
-                <p>Below you can find more information about <%=set.theme%></p>
+                <h1><%=set.Theme.name%></h1>
+                <p>Below you can find more information about <%=set.Theme.name%></p>
             </div>
         </div>
     </div>
     <tr>
         <td><img class="avatar w-24 h-16 rounded" src=<%=set.img_url%>></td>
         <td><%= set.name %></td>
-        <td><a href='/lego/sets?theme=<%=set.theme%>' class="btn-accent rounded"><%= set.theme %></a></td>
+        <td><a href='/lego/sets?theme=<%=set.Theme.name%>' class="btn-accent rounded"><%= set.Theme.name %></a></td>
         <td><%= set.year %></td>
         <td><%= set.num_parts %></td>
         <td><%= set.set_num %></td>
+        <td><a class="btn btn-success" href="/lego/editSet/<%= set.set_num %>">Edit Set</a></td>
         <td><p id="quotable_content"></p><br><p id="quotable_author"></p></td>
         <script>
             document.addEventListener("DOMContentLoaded", async ()=>{

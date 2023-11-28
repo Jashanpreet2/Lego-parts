@@ -22,7 +22,7 @@
         <tr>
             <td><img class="avatar w-24 h-16 rounded" src=<%=set.img_url%>></td>
             <td><%= set.name %></td>
-            <td><a href='/lego/sets?theme=<%=set.theme%>' class="btn-accent rounded"><%= set.theme %></a></td>
+            <td><a href='/lego/sets?theme=<%=set.Theme.name%>' class="btn-accent rounded"><%= set.Theme.name %></a></td>
             <td><%= set.year %></td>
             <td><%= set.num_parts %></td>
             <td><%= set.set_num %></td>
