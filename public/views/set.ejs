@@ -23,7 +23,7 @@
         <td><%= set.year %></td>
         <td><%= set.num_parts %></td>
         <td><%= set.set_num %></td>
-        <td><a class="btn btn-success" href="/lego/editSet/<%= set.set_num %>">Edit Set</a></td>
+        <% if(session.user){ %><td><a class="btn btn-success" href="/lego/editSet/<%= set.set_num %>">Edit Set</a></td><% } %>
         <td><p id="quotable_content"></p><br><p id="quotable_author"></p></td>
         <script>
             document.addEventListener("DOMContentLoaded", async ()=>{
